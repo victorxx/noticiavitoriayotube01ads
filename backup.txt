@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Define o tipo de documento como HTML5 e o idioma como português do Brasil -->
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Define o conjunto de caracteres como UTF-8, que permite acentuação -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Responsividade para funcionar bem em celulares e tablets -->
+
+  <meta name="description" content="Notícias em tempo real sobre Vitória, Vila Velha e Cariacica. Acompanhe vídeos informativos e atualizações da Grande Vitória." />
+  <!-- Descrição usada por mecanismos de busca -->
+
+  <meta name="keywords" content="notícias, Vitória, Vila Velha, Cariacica, Grande Vitória, Espírito Santo, jornalismo, vídeos, atualizações" />
+  <!-- Palavras-chave para SEO -->
+
+  <meta name="author" content="Equipe Notícias ES" />
+  <!-- Autor da página -->
+
+  <!-- Metadados Open Graph para redes sociais -->
+  <meta property="og:title" content="Notícias ES: Vitória, Vila Velha e Cariacica" />
+  <meta property="og:description" content="Vídeos e notícias sobre a região metropolitana da Grande Vitória." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://seudominio.com/noticias-es" />
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Vitoria_ES_Brasil.jpg/1024px-Vitoria_ES_Brasil.jpg" />
+
+  <meta name="robots" content="index, follow" />
+  <!-- Permite que mecanismos de busca indexem e sigam os links -->
+
+  <title>Notícias ES - Vitória, Vila Velha e Cariacica</title>
+  <!-- Título da página exibido na aba do navegador -->
+
+  <style>
+    /* Estilo global do corpo da página */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #121212, #1a1a1a);
+      color: #fff8dc;
+      overflow-x: hidden;
+    }
+
+    /* Banner de anúncio no topo */
+    .ad-banner {
+      background-color: #b8860b;
+      color: black;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 20px;
+      font-weight: bold;
+      animation: blink 1.5s infinite;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      box-shadow: 0 0 15px #ffd700;
+    }
+
+    /* Anúncios laterais */
+    .side-ad {
+      background-color: #b8860b;
+      color: black;
+      width: 180px;
+      padding: 15px 10px;
+      font-size: 18px;
+      font-weight: bold;
+      animation: blink 1.5s infinite;
+      position: fixed;
+      top: 60px;
+      bottom: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 0 15px #ffd700;
+      z-index: 9999;
+    }
+
+    /* Anúncio lateral esquerdo */
+    .side-ad.left {
+      left: 0;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    /* Anúncio lateral direito */
+    .side-ad.right {
+      right: 0;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+
+    /* Animação de piscar */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    /* Botão para fechar os anúncios */
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      color: black;
+    }
+
+    /* Cabeçalho do site */
+    header {
+      margin: 80px 200px 0 200px;
+      padding: 25px 0;
+      text-align: center;
+      border-bottom: 3px solid #daa520;
+      text-shadow: 0 0 10px #ffd700;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #ffd700;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #f5deb3;
+    }
+
+    /* Área principal de conteúdo */
+    main {
+      margin: 40px 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .video-container {
+      width: 100%;
+      max-width: 800px;
+      box-shadow: 0 0 30px #ffd700;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+    .video-title {
+      color: #ffd700;
+      font-weight: bold;
+      font-size: 1.6rem;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    /* Rodapé do site */
+    footer {
+      margin: 0 200px 40px 200px;
+      padding: 15px 0;
+      text-align: center;
+      border-top: 3px solid #daa520;
+      color: #f5deb3;
+      font-weight: bold;
+    }
+
+    /* Seção de notícias */
+    #newsSection {
+      margin: 40px 200px;
+      color: #ffe4b5;
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #ffd700;
+    }
+
+    #newsSection h2 {
+      color: #ffd700;
+      margin-bottom: 20px;
+    }
+
+    #newsList a {
+      color: #f5deb3;
+      text-decoration: none;
+    }
+
+    #newsList a:hover {
+      text-decoration: underline;
+    }
+
+    /* Conteúdo aleatório gerado */
+    #uniqueContent {
+      font-family: monospace;
+      background-color: #2e2e2e;
+      color: #ffd700;
+      padding: 15px;
+      margin: 40px auto;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #daa520;
+      white-space: pre-wrap;
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    /* Layout responsivo para telas menores */
+    @media(max-width: 900px) {
+      header, main, footer, #newsSection {
+        margin: 80px 20px 20px 20px;
+      }
+
+      iframe {
+        height: 300px;
+      }
+
+      .side-ad {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Banner superior com botão de fechar -->
+  <div class="ad-banner" id="adBanner">
+    <span class="close-btn" onclick="document.getElementById('adBanner').style.display='none'">&times;</span>
+    <a href="#" target="_blank" id="adLinkTop">ANÚNCIO REGIONAL - Clique aqui</a>
+  </div>
+
+  <!-- Anúncio lateral esquerdo -->
+  <div class="side-ad left" id="adLeft">
+    <span class="close-btn" onclick="document.getElementById('adLeft').style.display='none'">&times;</span>
+    <a href="#" target="_blank" id="adLinkLeft">Ofertas Locais</a>
+  </div>
+
+  <!-- Anúncio lateral direito -->
+  <div class="side-ad right" id="adRight">
+    <span class="close-btn" onclick="document.getElementById('adRight').style.display='none'">&times;</span>
+    <a href="#" target="_blank" id="adLinkRight">Notícias e Negócios</a>
+  </div>
+
+  <!-- Cabeçalho do site -->
+  <header>
+    <h1>Notícias ES</h1>
+    <p>Informações de Vitória, Vila Velha e Cariacica</p>
+  </header>
+
+  <!-- Área principal com vídeo -->
+  <main>
+    <div class="video-title" id="videoTitle">Carregando vídeo...</div>
+    <div class="video-container">
+      <iframe id="videoFrame" allowfullscreen title="Vídeo jornalístico ES"></iframe>
+    </div>
+  </main>
+
+  <!-- Lista de notícias -->
+  <section id="newsSection">
+    <h2>Últimas Notícias</h2>
+    <ul id="newsList"></ul>
+  </section>
+
+  <!-- Conteúdo único gerado dinamicamente -->
+  <div id="uniqueContent">Carregando conteúdo único...</div>
+
+  <!-- Rodapé -->
+  <footer>
+    &copy; Notícias ES - Todos os direitos reservados.
+  </footer>
+
+  <!-- Script JavaScript que controla o conteúdo dinâmico -->
+  <script>
+    // Vídeos do YouTube e seus títulos
+    const videoIDs = ["Bp9Z1mODnac", "Hqv8Gr1U-DU"];
+    const videoTitles = [
+      "Fantástico: Adolescente de 17 anos é apreendido após invadir ao menos 40 condomínios de luxo",
+      "Band revela punição aplicada ao repórter que agrediu colega da Record"
+    ];
+
+    // Lista de anúncios com link e texto
+    const ads = [
+      {url:"https://wa.me/5527999497001", texto:"SEGURO REGIONAL E CONSÓRCIOS"},
+      {url:"https://geocredibnkvitoria.com/", texto:"💰 Crédito rápido em Vitória"},
+      {url:"https://central.dokehost.com.br/aff.php?aff=90", texto:"Hospedagem profissional ES"},
+      {url:"https://hostinger.com.br", texto:"Crie seu site regional com desconto!"},
+      {url:"https://ocomerciobrasileironoticia.blogspot.com/2025/05/erp-profissional-para-empresas.html", texto:'ERP PROFISSIONAL'},
+      {url:"https://jogosantigos472302513.wordpress.com/confira-essas-empresas/", texto:'CONFIRA ESSAS EMPRESAS!'},
+      {url:"https://www.youtube.com/@gamenologia", texto:'confira esse canal'},
+      {url:"https://brasilbrasileiross.blogspot.com/", texto:'portal brasil'}
+    ];
+
+    // Lista de notícias
+    const newsData = [
+      {title: "Prefeitura de Vila Velha investe em mobilidade urbana", date: "02/07/2025", link: "#"},
+      {title: "Novo hospital regional é anunciado para Cariacica", date: "01/07/2025", link: "#"},
+      {title: "Turismo cresce em Vitória durante o inverno", date: "30/06/2025", link: "#"}
+    ];
+
+    // Carrega notícias na lista
+    function loadNews() {
+      const newsList = document.getElementById("newsList");
+      newsList.innerHTML = "";
+      newsData.forEach(news => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = news.link;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = `${news.title} (${news.date})`;
+        li.appendChild(a);
+        newsList.appendChild(li);
+      });
+    }
+
+    // Atualiza links de anúncios aleatoriamente
+    function updateAd(bannerId, linkId) {
+      const link = document.getElementById(linkId);
+      const adIndex = Math.floor(Math.random() * ads.length);
+      link.href = ads[adIndex].url;
+      link.textContent = ads[adIndex].texto;
+      link.title = ads[adIndex].texto;
+    }
+
+    // Gera uma string aleatória para exibir como "conteúdo único"
+    function generateRandomString(length = 600) {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let result = '';
+      for (let i = 0; i < length; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return result;
+    }
+
+    // Executa ao carregar a página
+    document.addEventListener("DOMContentLoaded", () => {
+      // Escolhe um vídeo aleatório e exibe
+      const index = Math.floor(Math.random() * videoIDs.length);
+      document.getElementById("videoFrame").src = `https://www.youtube.com/embed/${videoIDs[index]}?rel=0&autoplay=1&mute=1`;
+      document.getElementById("videoTitle").textContent = videoTitles[index];
+
+      // Atualiza os anúncios
+      updateAd("adBanner", "adLinkTop");
+      updateAd("adLeft", "adLinkLeft");
+      updateAd("adRight", "adLinkRight");
+
+      // Carrega as notícias
+      loadNews();
+
+      // Gera conteúdo aleatório
+      document.getElementById("uniqueContent").textContent = generateRandomString(400);
+    });
+  </script>
+</body>
+</html>
